@@ -15,8 +15,8 @@ def read_leader_position():
         target_pos[3] = -target_pos[3]
         target_pos[4] = -target_pos[4]
 
-leader_dynamixel = Dynamixel.Config(baudrate=1_000_000, device_name='/dev/tty.usbmodem57380045631').instantiate()
-leader = Robot(leader_dynamixel, servo_ids=[1, 2, 3, 6, 7])
+leader_dynamixel = Dynamixel.Config(baudrate=57600, device_name='/dev/ttyUSB0').instantiate()
+leader = Robot(leader_dynamixel, servo_ids=[1, 2, 3, 5, 6])
 leader.set_trigger_torque()
 
 m = mujoco.MjModel.from_xml_path('simulation/low_cost_robot/scene.xml')
